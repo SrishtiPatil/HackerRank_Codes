@@ -1,0 +1,32 @@
+#!/usr/bin/python
+
+def displayPathtoPrincess(n,grid):
+    for i, j in enumerate(grid):
+        if 'm' in j:
+            spot_m = (i, j.index('m'))
+        if 'p' in j:
+            spot_p = (i, j.index('p'))
+    row_diff=spot_m[0]-spot_p[0]
+    col_diff=spot_m[1]-spot_p[1]
+    ans=[]
+    if row_diff<0:
+        for i in range(abs(row_diff)):
+            ans.append('DOWN')
+    else:
+        for i in range(abs(row_diff)):
+            ans.append('UP')
+    if col_diff<0:
+        for i in range(abs(col_diff)):
+            ans.append('RIGHT')
+    else:
+        for i in range(abs(col_diff)):
+            ans.append('LEFT')
+    for i in ans:
+        print(i)
+
+m = int(input())
+grid = [] 
+for i in range(0, m): 
+    grid.append(input().strip())
+
+displayPathtoPrincess(m,grid)
