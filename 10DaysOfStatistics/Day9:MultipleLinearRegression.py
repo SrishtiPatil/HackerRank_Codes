@@ -7,12 +7,12 @@ X, Y = [], []
 
 for i in range(n):
     x = [0]
-    elements = list(map(float, input().split()))
-    for j in range(len(elements)):
+    a = list(map(float, input().split()))
+    for j in range(len(a)):
         if j < m:
-            x.append(elements[j])
+            x.append(a[j])
         else:
-            Y.append(elements[j])
+            Y.append(a[j])
     X.append(x)
 
 lm = linear_model.LinearRegression()
@@ -24,11 +24,11 @@ q = int(input())
 new_X = []
 for i in range(q):
     x = [0]
-    elements = list(map(float, input().split()))
-    for j in range(len(elements)):
-        x.append(elements[j])
+    a = list(map(float, input().split()))
+    for j in range(len(a)):
+        x.append(a[j])
     new_X.append(x)
 
-result = lm.predict(new_X)
-for i in range(len(result)):
-    print(round(result[i],2))
+res = lm.predict(new_X)
+for i in range(len(res)):
+    print(round(res[i],2))
