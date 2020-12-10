@@ -1,0 +1,9 @@
+#weighted mean
+n=int(input())
+a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+num=0
+for i in range(n):
+    num=num+(a[i]*b[i])
+deno=sum(b)
+print("{0:.1f}".format(num/deno))
