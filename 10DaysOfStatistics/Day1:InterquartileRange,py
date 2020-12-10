@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+#Interquartile Range
+n=int(input())
+x=list(map(int,input().split()))
+f=list(map(int,input().split()))
+s=[]
+for i in range(len(x)):
+    for j in range(f[i]):
+        s.append(x[i])
+s=sorted(s)
+import statistics as st
+m=int(len(s)/2)
+q1=st.median(s[:m])
+m=int(((len(s)+1)/2))
+q3=st.median(s[m:])
+print(float(q3-q1))
